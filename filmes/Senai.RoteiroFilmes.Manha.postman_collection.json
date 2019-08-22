@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "edec3c43-efad-4064-8785-b94299ae438c",
+		"name": "Senai.RoteiroFilmes.Manha",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generos",
+			"item": []
+		},
+		{
+			"name": "Filmes",
+			"item": [
+				{
+					"name": "Filmes.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filmes.BuscarPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

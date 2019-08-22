@@ -14,18 +14,13 @@ namespace Senai.Filmes.WebApi.Controllers
     [ApiController]
     public class GenerosController : ControllerBase
     {
-        List<GeneroDomain> generos = new List<GeneroDomain>()
-        {
-            new GeneroDomain { IdGenero = 1, Nome = "Comédia"}
-            ,new GeneroDomain { IdGenero = 2, Nome = "Ficção"}
-        };
 
         GenerosRepository GeneroRepository = new GenerosRepository();
 
         [HttpGet]
-        public IEnumerable<GeneroDomain> Listar()
+        public IActionResult Listar()
         {
-            return generos;
+            return Ok(GeneroRepository.Listar());
         }
 
         [HttpPost]
@@ -35,6 +30,25 @@ namespace Senai.Filmes.WebApi.Controllers
             return Ok();
         }
 
+        [HttpGet("{Id}")]
+        public IActionResult BuscarPorId(int Id)
+        {
+            GeneroRepository.BuscarPorId(Id);
+            return Ok();
+        }
 
+        [HttpPut]
+        public IActionResult Alterar(GeneroDomain generoDomain)
+        {
+            GeneroRepository.Alterar(generoDomain);
+            return Ok();
+        }
+
+        [HttpDelete("{Id}")]
+        public IActionResult Deletar(int Id)
+        {
+            GeneroRepository.Deletar(Id);
+            return Ok();
+        }
     }
 }
