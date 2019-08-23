@@ -10,7 +10,7 @@ namespace Senai.Filmes.WebApi.Repositories
     public class FilmesRepository
     {
         private string StringConexao =
-           "Data Source=.\\SqlExpress; initial catalog=M_RoteiroFilmes; Integrated Security=true;";
+           "Data Source=.\\SqlExpress; initial catalog=M_RoteiroFilmes; User Id=sa; pwd=132";
 
         public List<FilmeDomain> Listar()
         {
@@ -32,11 +32,11 @@ namespace Senai.Filmes.WebApi.Repositories
                     {
                         FilmeDomain filme = new FilmeDomain {
                             IdFilme = Convert.ToInt32(sdr["IdFilme"]),
-                            Nome = sdr["Nome"].ToString(),
+                            Nome = sdr["Titulo"].ToString(),
                             Genero = new GeneroDomain
                             {
                                 IdGenero = Convert.ToInt32(sdr["IdGenero"]),
-                                Nome = sdr["Nome"].ToString()
+                                Nome = sdr["Titulo"].ToString()
                             }
                         };
                         filmes.Add(filme);
@@ -49,7 +49,7 @@ namespace Senai.Filmes.WebApi.Repositories
 
         public FilmeDomain BuscarPorId(int Id)
         {
-            string Query = "SELECT IdFilme, Nome, IdGenero FROM Filmes Where Filme = @Filme";
+            string Query = "SELECT IdFilme, Titulo, IdGenero FROM Filmes Where Filme = @Filme";
 
             using (SqlConnection con = new SqlConnection(StringConexao))
             {
@@ -68,11 +68,11 @@ namespace Senai.Filmes.WebApi.Repositories
                             FilmeDomain estilo = new FilmeDomain()
                             {
                                 IdFilme = Convert.ToInt32(sdr["IdFilme"]),
-                                Nome = sdr["Nome"].ToString(),
+                                Nome = sdr["Titulo"].ToString(),
                                 Genero = new GeneroDomain
                                 {
                                     IdGenero = Convert.ToInt32(sdr["IdGenero"]),
-                                    Nome = sdr["Nome"].ToString()
+                                    Nome = sdr["Titulo"].ToString()
                                 }
                             };
                             return estilo;
@@ -85,12 +85,12 @@ namespace Senai.Filmes.WebApi.Repositories
 
         public void Cadastrar(FilmeDomain filme)
         {
-            string Query = "INSERT INTO Artistas (Nome, IdGenero) VALUES (@Nome,@IdGenero);";
+            string Query = "INSERT INTO Artistas (Titulo, IdGenero) VALUES (@Titulo,@IdGenero);";
 
             using(SqlConnection con = new SqlConnection(StringConexao))
             {
                 SqlCommand cmd = new SqlCommand(Query, con);
-                cmd.Parameters.AddWithValue("@Nome", filme.Nome);
+                cmd.Parameters.AddWithValue("@Titulo", filme.Nome);
                 cmd.Parameters.AddWithValue("@IdGenero", filme.GeneroId);
                 con.Open();
                 cmd.ExecuteNonQuery();
