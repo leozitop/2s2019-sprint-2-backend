@@ -32,5 +32,7 @@ namespace Senai.Ekips.WebApi.Repositories
                 ctx.Funcionarios.Add(funcionario);
             }
         }
+
+        
     }
 }
