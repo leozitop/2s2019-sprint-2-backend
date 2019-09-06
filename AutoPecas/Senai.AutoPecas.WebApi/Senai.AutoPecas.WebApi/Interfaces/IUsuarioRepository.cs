@@ -1,4 +1,5 @@
 ﻿using Senai.AutoPecas.WebApi.Domains;
+using Senai.AutoPecas.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,8 @@ namespace Senai.AutoPecas.WebApi.Interfaces
 {
     interface IUsuarioRepository
     {
+        Usuarios BuscarPorEmailESenha(LoginViewModel login);
         List<Usuarios> Listar();
-        void Cadastrar (Usuarios usuario);
+        void Cadastrar(Usuarios usuarios);
     }
 }

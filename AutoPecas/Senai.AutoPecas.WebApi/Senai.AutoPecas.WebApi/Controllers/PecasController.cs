@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -23,6 +24,7 @@ namespace Senai.AutoPecas.WebApi.Controllers
             PecaRepository = new PecaRepository();
         }
 
+
         [HttpGet]
         public IActionResult Listar()
         {
@@ -34,6 +36,8 @@ namespace Senai.AutoPecas.WebApi.Controllers
         {
             try
             {
+                int FornecedorId = Convert.ToInt32(HttpContext.User.Claims.First(x => x.Type == "FornecedorId").Value);
+                peca.FornecedorId = FornecedorId;
                 PecaRepository.Cadastrar(peca);
                 return Ok();
             }
@@ -64,6 +68,9 @@ namespace Senai.AutoPecas.WebApi.Controllers
         {
             try
             {
+                int FornecedorId = Convert.ToInt32(HttpContext.User.Claims.First(x => x.Type == "FornecedorId").Value);
+                peca.FornecedorId = FornecedorId;
+
                 Pecas pecaBuscada = PecaRepository.BuscarPorId(peca.PecaId);
                 if (pecaBuscada == null)
                     return NotFound();
