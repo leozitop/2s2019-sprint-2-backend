@@ -45,7 +45,7 @@
 							"raw": "{\n\t\"nome\" : \"Biografia\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/categorias",
+							"raw": "http://localhost:5000/api/plataformas",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -53,7 +53,7 @@
 							"port": "5000",
 							"path": [
 								"api",
-								"categorias"
+								"plataformas"
 							]
 						}
 					},
@@ -97,7 +97,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/categorias/11",
+							"raw": "http://localhost:5000/api/categorias/12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -106,7 +106,7 @@
 							"path": [
 								"api",
 								"categorias",
-								"11"
+								"12"
 							]
 						}
 					},
@@ -116,15 +116,309 @@
 		},
 		{
 			"name": "Plataformas",
-			"item": []
+			"item": [
+				{
+					"name": "Plataformas.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/plataformas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"plataformas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Plataformas.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\" : \"TeleCine Play\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/plataformas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"plataformas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Plataformas.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Nome\" : \"Tele Cine\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/plataformas/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"plataformas",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Plataformas.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/plataformas/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"plataformas",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Lancamentos",
-			"item": []
+			"item": [
+				{
+					"name": "Lancamentos.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/lancamentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"lancamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lancamentos.BuscarPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/lancamentos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"lancamentos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lancamentos.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Sla\",\n        \"sinopse\": \"bla bla bla\",\n        \"idCategoria\": 5,\n        \"duracao\": \"100 min\",\n        \"idTipo\": 1,\n        \"dataLancamento\": \"2019-04-25T00:00:00\",\n        \"idPlataforma\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/lancamentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"lancamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lancamentos.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\" : \"Qualquer coisa\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/lancamentos/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"lancamentos",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lancamentos.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/lancamentos/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"lancamentos",
+								"14"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Usuarios",
-			"item": []
+			"item": [
+				{
+					"name": "Usuarios.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuarios.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuarios.Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"helena@email.com\",\n\t\"senha\" : \"123456\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

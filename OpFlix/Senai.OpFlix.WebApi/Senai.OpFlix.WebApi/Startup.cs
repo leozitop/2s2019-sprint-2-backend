@@ -41,21 +41,20 @@ namespace Senai.OpFlix.WebApi
                     // tempo
                     ValidateLifetime = true,
                     // chave de autenticacao
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("auth-chave-autenticacao")),
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("OpFlix-chave-autenticacao")),
                     // tempo de expiracao
                     ClockSkew = TimeSpan.FromMinutes(30),
                     // emissor valido
-                    ValidIssuer = "Auth.WebApi",
+                    ValidIssuer = "OpFlix.WebApi",
                     // destinatario valido
-                    ValidAudience = "Auth.WebApi"
+                    ValidAudience = "OpFlix.WebApi"
                 };
             });
 
             // adicionar o middleware de documentacao do swagger
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("OpFlix v1", new Swashbuckle.AspNetCore.Swagger.
-                    Info { Title = "Auth API", Version = "OpFlix v1" });
+                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "Swagger API", Version = "v1" });
             });
         }
 
@@ -70,9 +69,10 @@ namespace Senai.OpFlix.WebApi
             app.UseAuthentication();
 
             app.UseSwagger();
+
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Auth API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "OpFlix API V1");
             });
 
             app.UseMvc();

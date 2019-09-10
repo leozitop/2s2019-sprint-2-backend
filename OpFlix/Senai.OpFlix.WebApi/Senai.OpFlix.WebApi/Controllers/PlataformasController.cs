@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.OpFlix.WebApi.Domains;
@@ -13,36 +14,37 @@ namespace Senai.OpFlix.WebApi.Controllers
     [Route("api/[controller]")]
     [Produces("application/json")]
     [ApiController]
-    public class CategoriasController : ControllerBase
+    public class PlataformasController : ControllerBase
     {
-        private ICategoriasRepository CategoriasRepository { get; set; }
+        private IPlataformasRepository PlataformasRepository { get; set; }
 
-        public CategoriasController()
+        public PlataformasController()
         {
-            CategoriasRepository = new CategoriasRepository();
+            PlataformasRepository = new PlataformasRepository();
         }
 
         /// <summary>
-        /// Lista todas as categorias
+        /// Listar todas as plataformas
         /// </summary>
-        /// <returns>Lista de Categorias</returns>
-        [HttpGet] 
+        /// <returns>lista de plataformas</returns>
+        [HttpGet]
         public IActionResult Listar()
         {
-            return Ok(CategoriasRepository.Listar());
+            return Ok(PlataformasRepository.Listar());
         }
 
         /// <summary>
-        /// Cadastrar categoria
+        /// Cadastrar plataforma
         /// </summary>
-        /// <param name="categoria"></param>
-        /// <returns>Ok(cadastro de categoria)</returns>
+        /// <param name="plataforma"></param>
+        /// <returns>Ok</returns>
+        //[Authorize(Roles = "2")]
         [HttpPost]
-        public IActionResult Cadastrar(Categorias categoria)
+        public IActionResult Cadastrar(Plataformas plataforma)
         {
             try
             {
-                CategoriasRepository.Cadastrar(categoria);
+                PlataformasRepository.Cadastrar(plataforma);
                 return Ok();
             }
             catch (Exception ex)
@@ -52,22 +54,21 @@ namespace Senai.OpFlix.WebApi.Controllers
         }
 
         /// <summary>
-        /// Atualzar categoria
+        /// Atualizar categoria
         /// </summary>
-        /// <param name="categoria"></param>
+        /// <param name="plataforma"></param>
         /// <returns>Ok</returns>
         [HttpPut("{id}")]
-        public IActionResult Atualizar(int id, Categorias categoria)
+        public IActionResult Atualizar(int id, Plataformas plataforma)
         {
             try
             {
-                Categorias CategoriaBuscada = CategoriasRepository.BuscarPorId(id);
-                if (CategoriaBuscada == null)
+                Plataformas PlataformaBuscada = PlataformasRepository.BuscarPorId(id);
+                if (PlataformaBuscada == null)
                     return NotFound();
-                categoria.IdCategoria = id;
-                CategoriasRepository.Atualizar(categoria);
-                return Ok();
-
+                plataforma.IdPlataforma = id;
+                PlataformasRepository.Atualizar(plataforma);
+                return Ok(PlataformaBuscada);
             }
             catch (Exception ex)
             {
@@ -75,15 +76,16 @@ namespace Senai.OpFlix.WebApi.Controllers
             }
         }
 
+
         /// <summary>
-        /// Deletar categoria
+        /// Deletar plataforma
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Ok</returns>
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
-            CategoriasRepository.Deletar(id);
+            PlataformasRepository.Deletar(id);
             return Ok();
         }
     }

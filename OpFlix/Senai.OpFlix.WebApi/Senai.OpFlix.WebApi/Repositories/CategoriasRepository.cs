@@ -50,7 +50,7 @@ namespace Senai.OpFlix.WebApi.Repositories
                 x.IdCategoria == categoria.IdCategoria);
                 CategoriaBuscada.Nome = categoria.Nome;
                 //atualiza categoria
-                ctx.Categorias.Update(categoria);
+                ctx.Categorias.Update(CategoriaBuscada);
                 //salva no bd
                 ctx.SaveChanges();
             }
