@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.OpFlix.WebApi.Domains;
@@ -26,6 +27,7 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// Listar todos os lancamentos
         /// </summary>
         /// <returns>lista de lancamentos</returns>
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Listar()
         {
@@ -37,6 +39,7 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// </summary>
         /// <param name="lancamento"></param>
         /// <returns>Ok</returns>
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Lancamentos lancamento)
         {
@@ -56,6 +59,7 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// </summary>
         /// <param name="lancamento"></param>
         /// <returns>Ok</returns>
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Lancamentos lancamento)
         {
@@ -79,6 +83,7 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Ok</returns>
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
@@ -91,6 +96,7 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns>lancamento</returns>
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {

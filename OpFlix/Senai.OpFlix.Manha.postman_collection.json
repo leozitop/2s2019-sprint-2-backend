@@ -31,6 +31,16 @@
 				{
 					"name": "Categorias.Cadastrar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWtAZW1haWwuY29tIiwiY2hhdmUiOiJ2YWxvciIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTY4Mjg5MzI1LCJpc3MiOiJPcEZsaXguV2ViQXBpIiwiYXVkIjoiT3BGbGl4LldlYkFwaSJ9.4p4GkLP6-K5t65IpMDEsHHPrRbhwUbfKDpX0N6YYncQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -45,7 +55,7 @@
 							"raw": "{\n\t\"nome\" : \"Biografia\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/plataformas",
+							"raw": "http://localhost:5000/api/categorias",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -53,7 +63,7 @@
 							"port": "5000",
 							"path": [
 								"api",
-								"plataformas"
+								"categorias"
 							]
 						}
 					},
@@ -76,7 +86,7 @@
 							"raw": "{\n\t\"nome\" : \"Bio\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/categorias/12",
+							"raw": "http://localhost:5000/api/categorias/13",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -85,7 +95,7 @@
 							"path": [
 								"api",
 								"categorias",
-								"12"
+								"13"
 							]
 						}
 					},
@@ -97,7 +107,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/categorias/12",
+							"raw": "http://localhost:5000/api/categorias/13",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -106,7 +116,7 @@
 							"path": [
 								"api",
 								"categorias",
-								"12"
+								"13"
 							]
 						}
 					},
@@ -140,6 +150,16 @@
 				{
 					"name": "Plataformas.Cadastrar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWtAZW1haWwuY29tIiwiY2hhdmUiOiJ2YWxvciIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTY4Mjg5NzAzLCJpc3MiOiJPcEZsaXguV2ViQXBpIiwiYXVkIjoiT3BGbGl4LldlYkFwaSJ9.AD0IwGhRkE0uYc7pZvwMlvzj85GHUG_BibEc3g2-sO8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -171,6 +191,16 @@
 				{
 					"name": "Plataformas.Atualizar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWtAZW1haWwuY29tIiwiY2hhdmUiOiJ2YWxvciIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTY4Mjg5NzAzLCJpc3MiOiJPcEZsaXguV2ViQXBpIiwiYXVkIjoiT3BGbGl4LldlYkFwaSJ9.AD0IwGhRkE0uYc7pZvwMlvzj85GHUG_BibEc3g2-sO8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -185,7 +215,7 @@
 							"raw": "{\n\t\"Nome\" : \"Tele Cine\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/plataformas/6",
+							"raw": "http://localhost:5000/api/plataformas/7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -194,7 +224,7 @@
 							"path": [
 								"api",
 								"plataformas",
-								"6"
+								"7"
 							]
 						}
 					},
@@ -203,6 +233,16 @@
 				{
 					"name": "Plataformas.Deletar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWtAZW1haWwuY29tIiwiY2hhdmUiOiJ2YWxvciIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTY4Mjg5NzAzLCJpc3MiOiJPcEZsaXguV2ViQXBpIiwiYXVkIjoiT3BGbGl4LldlYkFwaSJ9.AD0IwGhRkE0uYc7pZvwMlvzj85GHUG_BibEc3g2-sO8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
@@ -359,6 +399,16 @@
 				{
 					"name": "Usuarios.Listar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWtAZW1haWwuY29tIiwiY2hhdmUiOiJ2YWxvciIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTY4Mjg5NzAzLCJpc3MiOiJPcEZsaXguV2ViQXBpIiwiYXVkIjoiT3BGbGl4LldlYkFwaSJ9.AD0IwGhRkE0uYc7pZvwMlvzj85GHUG_BibEc3g2-sO8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -379,10 +429,40 @@
 				{
 					"name": "Usuarios.Cadastrar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWtAZW1haWwuY29tIiwiY2hhdmUiOiJ2YWxvciIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTY4Mjg5NzAzLCJpc3MiOiJPcEZsaXguV2ViQXBpIiwiYXVkIjoiT3BGbGl4LldlYkFwaSJ9.AD0IwGhRkE0uYc7pZvwMlvzj85GHUG_BibEc3g2-sO8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"leo\",\n    \"idTipoUsuario\": 2,\n    \"senha\": \"123456\",\n    \"email\": \"leo@email.com\"\n}"
+						},
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:5000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuarios"
+							]
 						}
 					},
 					"response": []
@@ -401,7 +481,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\" : \"helena@email.com\",\n\t\"senha\" : \"123456\"\n}"
+							"raw": "{\n\t\"email\" : \"erik@email.com\",\n\t\"senha\" : \"123456\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:5000/api/login",
@@ -414,6 +494,43 @@
 								"api",
 								"login"
 							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuarios.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/login/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"login",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favoritos",
+			"item": [
+				{
+					"name": "Favoritos.Favoritar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
 						}
 					},
 					"response": []

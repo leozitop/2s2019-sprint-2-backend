@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.OpFlix.WebApi.Domains;
@@ -26,6 +27,7 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// Lista todas as categorias
         /// </summary>
         /// <returns>Lista de Categorias</returns>
+        [AllowAnonymous]
         [HttpGet] 
         public IActionResult Listar()
         {
@@ -37,6 +39,7 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// </summary>
         /// <param name="categoria"></param>
         /// <returns>Ok(cadastro de categoria)</returns>
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Categorias categoria)
         {
@@ -56,6 +59,7 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// </summary>
         /// <param name="categoria"></param>
         /// <returns>Ok</returns>
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Categorias categoria)
         {
@@ -80,6 +84,7 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Ok</returns>
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {

@@ -38,7 +38,7 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// </summary>
         /// <param name="plataforma"></param>
         /// <returns>Ok</returns>
-        //[Authorize(Roles = "2")]
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Plataformas plataforma)
         {
@@ -58,6 +58,7 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// </summary>
         /// <param name="plataforma"></param>
         /// <returns>Ok</returns>
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Plataformas plataforma)
         {
@@ -75,13 +76,13 @@ namespace Senai.OpFlix.WebApi.Controllers
                 return BadRequest(new { mensagem = ex.Message });
             }
         }
-
-
+        
         /// <summary>
         /// Deletar plataforma
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Ok</returns>
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {

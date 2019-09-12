@@ -48,6 +48,7 @@ namespace Senai.OpFlix.WebApi.Repositories
             using (OpFlixContext ctx = new OpFlixContext())
             {
                 ctx.Usuarios.Add(usuario);
+                ctx.SaveChanges();
             }
         }
 

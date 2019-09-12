@@ -77,5 +77,13 @@ namespace Senai.OpFlix.WebApi.Repositories
                 ctx.SaveChanges();
             }
         }
+
+        //public Plataformas FiltrarPlataforma()
+        //{
+        //    using (OpFlixContext ctx = new OpFlixContext())
+        //    {
+        //        return ctx.Plataformas.
+        //    }
+        //}
     }
 }
