@@ -52,3 +52,15 @@ alter column Duracao varchar(255);
 Create View PlataformasCategorias(
 	IdPlataforma int foreign key references Plataformas (IdPlataforma)
 );
+
+select * from Usuarios
+
+Create table Favoritos(
+	IdFavorito int primary key identity
+	,IdUsuario int foreign key references Usuarios (IdUsuario)
+	,IdLancamento int foreign key references Lancamentos
+);
+
+drop table UsuariosLancamentos;
+
+drop table Favoritos;

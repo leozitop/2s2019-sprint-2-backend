@@ -6,14 +6,15 @@ Select * from Plataformas order by IdPlataforma;
 Select * from TiposUsuarios order by IdTipoUsuario;
 Select * from Usuarios order by IdUsuario;
 Select * from Lancamentos order by IdLancamento;
-Select * from UsuariosLancamentos order by IdUsuario;
+--Select * from UsuariosLancamentos order by IdUsuario;
+Select * from Favoritos;
 
-Select UL.*, U.*, L.*
-from UsuariosLancamentos UL
+Select F.*, U.*, L.*
+from Favoritos F
 join Usuarios U
-ON UL.IdUsuario = U.IdUsuario
+ON F.IdUsuario = U.IdUsuario
 join Lancamentos L
-ON UL.IdLancamento = L.IdLancamento;
+ON F.IdLancamento = L.IdLancamento;
 
 Select LEN('La Casa de Papel');
 --quantidade de caracteres de um lançamento--

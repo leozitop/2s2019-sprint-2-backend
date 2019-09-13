@@ -13,5 +13,6 @@ namespace Senai.OpFlix.WebApi.Interfaces
         void Atualizar(Plataformas plataforma);
         void Deletar(int id);
         Plataformas BuscarPorId(int id);
+        Plataformas FiltarPlataforma(string nome);
     }
 }

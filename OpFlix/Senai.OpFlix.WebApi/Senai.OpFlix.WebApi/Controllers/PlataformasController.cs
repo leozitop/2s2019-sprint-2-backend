@@ -89,5 +89,21 @@ namespace Senai.OpFlix.WebApi.Controllers
             PlataformasRepository.Deletar(id);
             return Ok();
         }
+
+        [HttpGet("{nome}")]
+        public IActionResult Filtrar(string nome)
+        {
+            try
+            {
+                Plataformas plataforma = PlataformasRepository.FiltarPlataforma(nome);
+                if (plataforma == null)
+                    return NotFound();
+                return Ok(plataforma);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new{ mensagem = ex.Message });
+            }
+        }
     }
 }

@@ -9,22 +9,6 @@ namespace Senai.OpFlix.WebApi.Repositories
 {
     public class FavoritosRepository : IFavoritosRepository
     {
-        public List<Lancamentos> Favoritos()
-        {
-            using (OpFlixContext ctx = new OpFlixContext())
-            {
-                return ctx.Lancamentos.ToList(); 
-            }
-        }
-
-        public void AddFavorito(Lancamentos favorito)
-        {
-            using (OpFlixContext ctx = new OpFlixContext())
-            {
-                ctx.Lancamentos.Add(favorito);
-            }
-        }
-
-
+        
     }
 }

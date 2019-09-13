@@ -15,31 +15,24 @@ namespace Senai.OpFlix.WebApi.Controllers
     [ApiController]
     public class FavoritosController : ControllerBase
     {
-        private IFavoritosRepository FavoritosRepository { get; set; }
+        //private IFavoritosRepository FavoritosRepository { get; set; }
 
-        public FavoritosController()
-        {
-            FavoritosRepository = new FavoritosRepository();
-        }
+        //public FavoritosController()
+        //{
+        //    FavoritosRepository = new FavoritosRepository();
+        //}
 
-        [HttpGet]
-        public IActionResult Favoritos()
-        {
-            return Ok(FavoritosRepository.Favoritos());
-        }
+        //[HttpGet]
+        //public IActionResult Favoritos()
+        //{
+        //    return Ok(FavoritosRepository.ListarFavoritos());
+        //}
 
-        [HttpPost]
-        public IActionResult Favoritar(Lancamentos favorito)
-        {
-            try
-            {
-                FavoritosRepository.AddFavorito(favorito);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { mensagem = ex.Message });
-            }
-        }
+        //[HttpPost("{id}")]
+        //public IActionResult Favoritar(int id)
+        //{
+        //    FavoritosRepository.AddFavorito(id);
+        //    return Ok();
+        //}
     }
 }

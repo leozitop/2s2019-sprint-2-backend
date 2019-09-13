@@ -1,4 +1,5 @@
 ﻿using Senai.OpFlix.WebApi.Domains;
+using Senai.OpFlix.WebApi.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,6 @@ namespace Senai.OpFlix.WebApi.Interfaces
 {
     public interface IFavoritosRepository
     {
-        List<Lancamentos> Favoritos();
-        void AddFavorito(Lancamentos favorito);
+        
     }
 }

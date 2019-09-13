@@ -78,12 +78,13 @@ namespace Senai.OpFlix.WebApi.Repositories
             }
         }
 
-        //public Plataformas FiltrarPlataforma()
-        //{
-        //    using (OpFlixContext ctx = new OpFlixContext())
-        //    {
-        //        return ctx.Plataformas.
-        //    }
-        //}
+        public Plataformas FiltarPlataforma(string nome)
+        {
+            using (OpFlixContext ctx = new OpFlixContext())
+            {
+                Plataformas PlataformaBuscada = ctx.Plataformas.FirstOrDefault(x => x.Nome == nome);
+                return PlataformaBuscada;
+            }
+        }
     }
 }

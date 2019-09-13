@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Senai.OpFlix.WebApi.Repositories;
 
 namespace Senai.OpFlix.WebApi.Domains
 {

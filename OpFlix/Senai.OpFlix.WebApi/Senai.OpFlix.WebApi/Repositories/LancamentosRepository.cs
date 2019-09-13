@@ -76,5 +76,12 @@ namespace Senai.OpFlix.WebApi.Repositories
                 return ctx.Lancamentos.FirstOrDefault(x => x.IdLancamento == id);
             }
         }
+
+        public void FiltrarData(Lancamentos lancamentos)
+        {
+            using (OpFlixContext ctx = new OpFlixContext())
+            {
+            }
+        }
     }
 }

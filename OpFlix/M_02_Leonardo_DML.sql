@@ -29,8 +29,8 @@ values	('Annabelle 3', 'O terceiro filme da boneca do mal', 2, '106 min', 1, '26
 		,('Godzilla 2: Rei dos Monstros', 'Godzilla deve provar que é a criatura mais forte da Terra', 4, '132 min', 1, '30/05/2019', 2)
 		,('The Boys', 'inspirada na série em quadrinhos de Super-Heróis "The Boys"', 6, '60 min', 2, '26/07/2019', 3);
 
-Insert into UsuariosLancamentos (IdUsuario, IdLancamento)
-values (2, 1), (3, 2), (2, 4), (3, 3), (3, 5);
+--Insert into UsuariosLancamentos (IdUsuario, IdLancamento)
+--values (2, 1), (3, 2), (2, 4), (3, 3), (3, 5);
 
 Update Usuarios
 Set IdTipoUsuario = 1
@@ -77,3 +77,6 @@ Where IdLancamento = 3;
 Update Lancamentos
 Set DataLancamento = '01/04/2019'
 Where IdLancamento = 3;
+
+Insert into Favoritos (IdUsuario, IdLancamento)
+values	(1, 2), (1, 4), (1, 7), (2, 1), (2, 5), (3, 8), (3, 10), (3, 12), (4, 1), (4, 3), (4, 8), (4, 12);
