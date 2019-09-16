@@ -56,8 +56,7 @@ Create View PlataformasCategorias(
 select * from Usuarios
 
 Create table Favoritos(
-	IdFavorito int primary key identity
-	,IdUsuario int foreign key references Usuarios (IdUsuario)
+	IdUsuario int foreign key references Usuarios (IdUsuario)
 	,IdLancamento int foreign key references Lancamentos
 );
 

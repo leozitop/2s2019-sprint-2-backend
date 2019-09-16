@@ -90,6 +90,11 @@ namespace Senai.OpFlix.WebApi.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Filtra a plataforma pelo nome na Url
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns>a plataforma buscada</returns>
         [HttpGet("{nome}")]
         public IActionResult Filtrar(string nome)
         {

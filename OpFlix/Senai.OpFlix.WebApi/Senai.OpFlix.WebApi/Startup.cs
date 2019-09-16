@@ -56,6 +56,11 @@ namespace Senai.OpFlix.WebApi
             {
                 c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "Swagger API", Version = "v1" });
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,6 +81,8 @@ namespace Senai.OpFlix.WebApi
             });
 
             app.UseMvc();
+
+            app.UseCors();
         }
     }
 }

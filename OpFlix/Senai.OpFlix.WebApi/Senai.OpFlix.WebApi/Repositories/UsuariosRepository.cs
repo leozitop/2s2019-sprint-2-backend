@@ -4,6 +4,8 @@ using Senai.OpFlix.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Senai.OpFlix.WebApi.Repositories
@@ -65,5 +67,38 @@ namespace Senai.OpFlix.WebApi.Repositories
                 ctx.SaveChanges();
             }
         }
+
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="login"></param>
+        ///// <param name="senha"></param>
+        ///// <returns></returns>
+        //public static string AcertaSenha(LoginViewModel login, string senha)
+        //{
+        //    using (OpFlixContext ctx = new OpFlixContext())
+        //    {
+        //        Usuarios usuario = new Usuarios();
+        //        Usuarios usuarios = ctx.Usuarios.FirstOrDefault(x =>
+        //        x.Email == login.Email && x.Senha == login.Senha);
+
+        //        senha = usuario.Senha;
+        //        StringBuilder senhaHash = new StringBuilder();
+
+        //        MD5 md5 = MD5.Create();
+        //        byte[] entrada = Encoding.ASCII.GetBytes(login + "//" + senha);
+        //        byte[] hash = md5.ComputeHash(entrada);
+        //        StringBuilder sb = new StringBuilder();
+        //        for (int i = 0; i < hash.Length; i++)
+        //        {
+        //            senhaHash.Append(hash[i].ToString("X2"));
+        //        }
+
+        //        if (usuarios == null)
+        //            return null;
+        //        return senhaHash.ToString(); 
+
+        //    }
+        //}
     }
 }

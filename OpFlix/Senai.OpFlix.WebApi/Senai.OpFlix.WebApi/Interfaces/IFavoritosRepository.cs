@@ -9,6 +9,7 @@ namespace Senai.OpFlix.WebApi.Interfaces
 {
     public interface IFavoritosRepository
     {
-        
+        List<Favoritos> ListarFavoritos();
+        void AddFavorito(Favoritos favoritos);
     }
 }

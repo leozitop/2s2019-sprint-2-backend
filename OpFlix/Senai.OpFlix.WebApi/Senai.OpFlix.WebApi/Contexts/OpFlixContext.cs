@@ -22,6 +22,7 @@ namespace Senai.OpFlix.WebApi.Domains
         public virtual DbSet<Tipos> Tipos { get; set; }
         public virtual DbSet<TiposUsuarios> TiposUsuarios { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
+        public virtual DbSet<Favoritos> Favoritos { get; set; }
 
         // Unable to generate entity type for table 'dbo.UsuariosLancamentos'. Please see the warning messages.
 
@@ -156,6 +157,18 @@ namespace Senai.OpFlix.WebApi.Domains
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Usuarios__IdTipo__5629CD9C");
             });
+
+            modelBuilder.Entity<Favoritos>().HasKey(p => new { p.IdUsuario, p.IdLancamento });
+
+            modelBuilder.Entity<Favoritos>()
+            .HasOne<Usuarios>(sc => sc.Usuario)
+            .WithMany(s => s.Favoritos)
+            .HasForeignKey(sc => sc.IdUsuario);
+
+            modelBuilder.Entity<Favoritos>()
+            .HasOne<Lancamentos>(sc => sc.Lancamento)
+            .WithMany(s => s.Favoritos)
+            .HasForeignKey(sc => sc.IdLancamento);
         }
     }
 }

@@ -78,6 +78,11 @@ namespace Senai.OpFlix.WebApi.Repositories
             }
         }
 
+        /// <summary>
+        /// Filtra a plataforma pelo nome na Url
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns>a Plataforma buscada</returns>
         public Plataformas FiltarPlataforma(string nome)
         {
             using (OpFlixContext ctx = new OpFlixContext())
