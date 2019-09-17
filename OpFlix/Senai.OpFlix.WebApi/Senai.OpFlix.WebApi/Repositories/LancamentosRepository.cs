@@ -1,5 +1,6 @@
 ﻿using Senai.OpFlix.WebApi.Domains;
 using Senai.OpFlix.WebApi.Interfaces;
+using Senai.OpFlix.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,10 +78,11 @@ namespace Senai.OpFlix.WebApi.Repositories
             }
         }
 
-        public void FiltrarData(Lancamentos lancamentos)
+        public List<Lancamentos> FiltrarData(DateTime data)
         {
             using (OpFlixContext ctx = new OpFlixContext())
             {
+                return ctx.Lancamentos.Where(x => x.DataLancamento == data).ToList();
             }
         }
     }

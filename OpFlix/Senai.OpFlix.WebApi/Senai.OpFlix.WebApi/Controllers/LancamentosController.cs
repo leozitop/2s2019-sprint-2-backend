@@ -113,21 +113,10 @@ namespace Senai.OpFlix.WebApi.Controllers
             }
         }
 
-        //[HttpGet("{buscar/date}")]
-        //public IActionResult FiltrarData(DateTime date)
-        //{
-        //    var data = date.Date;
-        //    try
-        //    {
-        //        Lancamentos lancamento = LancamentosRepository.FiltrarData(data);
-        //        if (lancamento == null)
-        //            return NotFound();
-        //        return Ok(lancamento);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(new{ mensagem = ex.Message });
-        //    }
-        //}
+        [HttpGet("{buscar/date}")]
+        public IActionResult FiltrarData(DateTime data)
+        {
+            return Ok(LancamentosRepository.FiltrarData(data));
+        }
     }
 }

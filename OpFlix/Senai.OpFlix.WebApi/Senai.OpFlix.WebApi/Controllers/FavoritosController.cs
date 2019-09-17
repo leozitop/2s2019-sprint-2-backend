@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -17,10 +18,12 @@ namespace Senai.OpFlix.WebApi.Controllers
     public class FavoritosController : ControllerBase
     {
         private IFavoritosRepository FavoritosRepository { get; set; }
+        private IUsuariosRepository UsuariosRepository { get; set; }
 
         public FavoritosController()
         {
             FavoritosRepository = new FavoritosRepository();
+            UsuariosRepository = new UsuariosRepository();
         }
 
         /// <summary>
@@ -44,6 +47,9 @@ namespace Senai.OpFlix.WebApi.Controllers
         {
             try
             {
+                //int UsuarioId = Convert.ToInt32(HttpContext.User.Claims.First(x => x.Type 
+                //== JwtRegisteredClaimNames.Jti).Value);
+                //favoritos.IdUsuario = UsuarioId;
                 FavoritosRepository.AddFavorito(favoritos);
                 return Ok();
             }
