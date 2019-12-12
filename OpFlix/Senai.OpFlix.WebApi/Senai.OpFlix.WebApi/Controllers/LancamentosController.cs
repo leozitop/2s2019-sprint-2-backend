@@ -39,7 +39,7 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// </summary>
         /// <param name="lancamento"></param>
         /// <returns>Ok</returns>
-        [Authorize(Roles = "1")]
+        //[Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Lancamentos lancamento)
         {
@@ -113,10 +113,34 @@ namespace Senai.OpFlix.WebApi.Controllers
             }
         }
 
-        [HttpGet("{buscar/date}")]
+        //[HttpGet("{buscar/date}")]
+        //public IActionResult FiltrarData(DateTime data)
+        //{
+        //return Ok(LancamentosRepository.FiltrarData(data));
+        //}
+
+        [HttpGet("filtroCategoria/{categoria}")]
+        public IActionResult FiltrarCategoria(int categoria)
+        {
+            return Ok(LancamentosRepository.BuscarPorCategoria(categoria));
+        }
+
+        [HttpGet("filtroPlataforma/{plataforma}")]
+        public IActionResult FiltrarPlataforma(int plataforma)
+        {
+            return Ok(LancamentosRepository.BuscarPorPlataforma(plataforma));
+        }
+
+        [HttpGet("filtroTipo/{tipo}")]
+        public IActionResult FiltrarTipo(int tipo)
+        {
+            return Ok(LancamentosRepository.BuscarPorTipo(tipo));
+        }
+
+        [HttpGet("filtroData/{data}")]
         public IActionResult FiltrarData(DateTime data)
         {
-            return Ok(LancamentosRepository.FiltrarData(data));
+            return Ok(LancamentosRepository.BuscarPorData(data));
         }
     }
 }

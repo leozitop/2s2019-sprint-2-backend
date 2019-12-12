@@ -70,6 +70,10 @@ namespace Senai.OpFlix.WebApi.Domains
                     .IsRequired()
                     .HasColumnType("text");
 
+                entity.Property(e => e.Imagem)
+                   .IsRequired()
+                   .HasColumnType("text");
+
                 entity.HasOne(d => d.IdCategoriaNavigation)
                     .WithMany(p => p.Lancamentos)
                     .HasForeignKey(d => d.IdCategoria)

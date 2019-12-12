@@ -12178,11 +12178,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\45684686800\\Documents\\Projetos\\2s2019-sprint-2-backend\\Optus\\Senai.Optus.WebApi\\Senai.Optus.WebApi\\Senai.Optus.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\45684686800\\Documents\\sprint-2-BackEnd\\2s2019-sprint-2-backend\\Optus\\Senai.Optus.WebApi\\Senai.Optus.WebApi\\Senai.Optus.WebApi.csproj",
       "projectName": "Senai.Optus.WebApi",
-      "projectPath": "C:\\Users\\45684686800\\Documents\\Projetos\\2s2019-sprint-2-backend\\Optus\\Senai.Optus.WebApi\\Senai.Optus.WebApi\\Senai.Optus.WebApi.csproj",
+      "projectPath": "C:\\Users\\45684686800\\Documents\\sprint-2-BackEnd\\2s2019-sprint-2-backend\\Optus\\Senai.Optus.WebApi\\Senai.Optus.WebApi\\Senai.Optus.WebApi.csproj",
       "packagesPath": "C:\\Users\\45684686800\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\45684686800\\Documents\\Projetos\\2s2019-sprint-2-backend\\Optus\\Senai.Optus.WebApi\\Senai.Optus.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\45684686800\\Documents\\sprint-2-BackEnd\\2s2019-sprint-2-backend\\Optus\\Senai.Optus.WebApi\\Senai.Optus.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

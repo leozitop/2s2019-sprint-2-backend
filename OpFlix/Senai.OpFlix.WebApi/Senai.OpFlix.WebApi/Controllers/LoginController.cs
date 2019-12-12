@@ -59,8 +59,6 @@ namespace Senai.OpFlix.WebApi.Controllers
                     expires: DateTime.Now.AddMinutes(30),
                     signingCredentials: creds);
 
-                // gerar a chave pra vocês
-                // return Ok(new { mensagem = "Sucesso, bro." });
                 return Ok(new
                 {
                     token = new JwtSecurityTokenHandler().WriteToken(token)

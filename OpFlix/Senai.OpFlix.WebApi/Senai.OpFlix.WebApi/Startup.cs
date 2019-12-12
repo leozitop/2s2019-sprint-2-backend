@@ -71,6 +71,8 @@ namespace Senai.OpFlix.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("CorsPolicy");
+
             app.UseAuthentication();
 
             app.UseSwagger();
@@ -82,7 +84,7 @@ namespace Senai.OpFlix.WebApi
 
             app.UseMvc();
 
-            app.UseCors();
+            
         }
     }
 }

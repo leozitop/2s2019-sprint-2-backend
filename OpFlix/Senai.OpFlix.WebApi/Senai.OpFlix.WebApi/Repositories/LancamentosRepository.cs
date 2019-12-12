@@ -1,4 +1,5 @@
-﻿using Senai.OpFlix.WebApi.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.OpFlix.WebApi.Domains;
 using Senai.OpFlix.WebApi.Interfaces;
 using Senai.OpFlix.WebApi.ViewModels;
 using System;
@@ -18,7 +19,7 @@ namespace Senai.OpFlix.WebApi.Repositories
         {
             using (OpFlixContext ctx = new OpFlixContext())
             {
-                return ctx.Lancamentos.ToList();
+                return ctx.Lancamentos.Include(x => x.IdCategoriaNavigation).Include(x => x.IdPlataformaNavigation).Include(x => x.IdTipoNavigation).ToList();
             }
         }
 
@@ -78,7 +79,39 @@ namespace Senai.OpFlix.WebApi.Repositories
             }
         }
 
-        public List<Lancamentos> FiltrarData(DateTime data)
+        //public List<Lancamentos> FiltrarData(DateTime data)
+        //{
+        // using (OpFlixContext ctx = new OpFlixContext())
+        //{
+        //return ctx.Lancamentos.Where(x => x.DataLancamento == data).ToList();
+        //}
+        //}
+
+        public List<Lancamentos> BuscarPorCategoria(int categoria)
+        {
+            using (OpFlixContext ctx = new OpFlixContext())
+            {
+                return ctx.Lancamentos.Where(x => x.IdCategoria == categoria).ToList();
+            }
+        }
+
+        public List<Lancamentos> BuscarPorPlataforma(int plataforma)
+        {
+            using (OpFlixContext ctx = new OpFlixContext())
+            {
+                return ctx.Lancamentos.Where(x => x.IdPlataforma == plataforma).ToList();
+            }
+        }
+
+        public List<Lancamentos> BuscarPorTipo(int tipo)
+        {
+            using (OpFlixContext ctx = new OpFlixContext())
+            {
+                return ctx.Lancamentos.Where(x => x.IdTipo == tipo).ToList();
+            }
+        }
+
+        public List<Lancamentos> BuscarPorData(DateTime data)
         {
             using (OpFlixContext ctx = new OpFlixContext())
             {

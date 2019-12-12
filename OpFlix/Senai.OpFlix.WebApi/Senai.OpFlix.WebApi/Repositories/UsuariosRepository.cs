@@ -1,8 +1,10 @@
-﻿using Senai.OpFlix.WebApi.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.OpFlix.WebApi.Domains;
 using Senai.OpFlix.WebApi.Interfaces;
 using Senai.OpFlix.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -21,7 +23,7 @@ namespace Senai.OpFlix.WebApi.Repositories
         {
             using (OpFlixContext ctx = new OpFlixContext())
             {
-                Usuarios usuario = ctx.Usuarios.FirstOrDefault(x => 
+                Usuarios usuario = ctx.Usuarios.FirstOrDefault(x =>
                 x.Email == login.Email && x.Senha == login.Senha);
                 if (usuario == null)
                     return null;
@@ -47,6 +49,7 @@ namespace Senai.OpFlix.WebApi.Repositories
         /// <param name="usuario"></param>
         public void Cadastrar(Usuarios usuario)
         {
+            //usuario.Senha = HashValue(usuario.Senha);
             using (OpFlixContext ctx = new OpFlixContext())
             {
                 ctx.Usuarios.Add(usuario);
@@ -68,37 +71,20 @@ namespace Senai.OpFlix.WebApi.Repositories
             }
         }
 
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="login"></param>
-        ///// <param name="senha"></param>
-        ///// <returns></returns>
-        //public static string AcertaSenha(LoginViewModel login, string senha)
+        //public static string HashValue(string value)
         //{
-        //    using (OpFlixContext ctx = new OpFlixContext())
+        //    UnicodeEncoding encoding = new UnicodeEncoding();
+        //    byte[] hashBytes;
+        //    using (HashAlgorithm hash = SHA1.Create())
+        //        hashBytes = hash.ComputeHash(encoding.GetBytes(value));
+
+        //    StringBuilder hashValue = new StringBuilder(hashBytes.Length * 2);
+        //    foreach (byte b in hashBytes)
         //    {
-        //        Usuarios usuario = new Usuarios();
-        //        Usuarios usuarios = ctx.Usuarios.FirstOrDefault(x =>
-        //        x.Email == login.Email && x.Senha == login.Senha);
-
-        //        senha = usuario.Senha;
-        //        StringBuilder senhaHash = new StringBuilder();
-
-        //        MD5 md5 = MD5.Create();
-        //        byte[] entrada = Encoding.ASCII.GetBytes(login + "//" + senha);
-        //        byte[] hash = md5.ComputeHash(entrada);
-        //        StringBuilder sb = new StringBuilder();
-        //        for (int i = 0; i < hash.Length; i++)
-        //        {
-        //            senhaHash.Append(hash[i].ToString("X2"));
-        //        }
-
-        //        if (usuarios == null)
-        //            return null;
-        //        return senhaHash.ToString(); 
-
+        //        hashValue.AppendFormat(CultureInfo.InvariantCulture, "{0:X2}", b);
         //    }
+
+        //    return hashValue.ToString();
         //}
     }
 }

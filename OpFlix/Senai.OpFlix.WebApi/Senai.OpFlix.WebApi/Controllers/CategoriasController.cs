@@ -17,10 +17,12 @@ namespace Senai.OpFlix.WebApi.Controllers
     public class CategoriasController : ControllerBase
     {
         private ICategoriasRepository CategoriasRepository { get; set; }
+        private ILancamentosRepository LancamentosRepository { get; set; }
 
         public CategoriasController()
         {
             CategoriasRepository = new CategoriasRepository();
+            LancamentosRepository = new LancamentosRepository();
         }
 
         /// <summary>
@@ -39,7 +41,7 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// </summary>
         /// <param name="categoria"></param>
         /// <returns>Ok(cadastro de categoria)</returns>
-        [Authorize(Roles = "1")]
+        
         [HttpPost]
         public IActionResult Cadastrar(Categorias categoria)
         {
@@ -59,7 +61,6 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// </summary>
         /// <param name="categoria"></param>
         /// <returns>Ok</returns>
-        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Categorias categoria)
         {
@@ -84,12 +85,13 @@ namespace Senai.OpFlix.WebApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Ok</returns>
-        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
             CategoriasRepository.Deletar(id);
             return Ok();
         }
+
+        
     }
 }
